@@ -1,77 +1,92 @@
-# Windows-nvim-config
-<div style="background-color:#1a1b26; color:#c0caf5; padding: 20px; border-radius: 10px;">
+# Neovim Configuration - Tokyo Night Setup
 
-<h1 style="color:#7aa2f7;">Neovim Configuration - Tokyo Night Setup</h1>
+![Neovim Tokyo Night](image.png)
 
-<img src="image.png" alt="Neovim Tokyo Night" style="width:100%; max-width:600px; border-radius:10px; margin-bottom:20px;"/>
+A **full-featured Neovim configuration** featuring the **Tokyo Night theme**, optimized for productivity, coding, and modern development workflows. This setup includes LSP, Treesitter, autocompletion, file navigation, and even Jupyter-like notebook support.
 
-<p>A full-featured <strong>Neovim configuration</strong> with the beautiful <strong>Tokyo Night theme</strong>, focused on productivity, LSP, autocompletion, and modern development experience.</p>
+---
 
-<h2 style="color:#bb9af7;">Features</h2>
-<ul>
-  <li><strong>Theme & Appearance:</strong> Tokyo Night & optional Gruvbox theme, Lualine, icons</li>
-  <li><strong>File Navigation:</strong> Nvim Tree, Telescope fuzzy finder</li>
-  <li><strong>LSP & Autocompletion:</strong> Mason, nvim-lspconfig, nvim-cmp, LuaSnip</li>
-  <li><strong>Code Editing & Productivity:</strong> Treesitter, Which-key, Presence.nvim, Snippets, Magma.nvim</li>
-</ul>
+## Features
 
-<h2 style="color:#bb9af7;">Installation</h2>
-<pre style="background-color:#16161e; color:#c0caf5; padding:10px; border-radius:5px;">
-git clone https://github.com/Obiwankenobi699/nvim_Config_4Everyone.git ~/.config/nvim
-nvim
-:PackerSync
-</pre>
+### Theme & Appearance
+- **Tokyo Night** theme with optional **Gruvbox** alternative.
+- **Lualine** statusline with icons and custom sections.
+- Customizable colors and theme settings in `lua/core/settings.lua`.
+- **Icons** support with `nvim-web-devicons`.
 
-<h2 style="color:#bb9af7;">Folder Structure</h2>
-<pre style="background-color:#16161e; color:#c0caf5; padding:10px; border-radius:5px;">
+### File Navigation & Search
+- **Nvim Tree** file explorer.
+- **Telescope.nvim** for fuzzy file search, buffers, git files, and more.
+
+### Code Editing & Productivity
+- **Treesitter** for syntax highlighting and text objects.
+- **Which-key.nvim** to discover keybindings quickly.
+- **Presence.nvim** for Discord Rich Presence integration.
+- **Snippets** with LuaSnip and Friendly Snippets.
+- **Jupyter/Notebook support** with `magma-nvim`.
+
+### LSP & Autocompletion
+- **Mason.nvim** to install and manage LSP/DAP/linters easily.
+- **nvim-lspconfig** for configuring language servers.
+- **nvim-cmp** for autocompletion with LuaSnip snippet integration.
+
+### Other Utilities
+- **Plenary.nvim** and **Popup.nvim** for Lua helper functions.
+- Automatically installs **Packer.nvim** if not present.
+
+---
+
+## Screenshots
+
+![Neovim Tokyo Night](image.png)
+
+---
+
+## Folder Structure
+
 ~/.config/nvim/
-├── init.lua
-├── image.png
+├── init.lua               # Main configuration entrypoint
+├── image.png              # Screenshot for README
 └── lua/
     └── core/
-        ├── keymaps.lua
-        ├── plugin_config/
-        │   └── init.lua
-        └── settings.lua
-</pre>
+        ├── keymaps.lua           # Custom keybindings
+        ├── settings.lua          # Theme and global options
+        └── plugin_config/
+            └── init.lua          # Packer plugin setup
 
-<h2 style="color:#bb9af7;">Plugins Used</h2>
-<ul>
-  <li>wbthomason/packer.nvim</li>
-  <li>nvim-lua/plenary.nvim</li>
-  <li>folke/tokyonight.nvim</li>
-  <li>ellisonleao/gruvbox.nvim</li>
-  <li>nvim-treesitter/nvim-treesitter</li>
-  <li>folke/which-key.nvim</li>
-  <li>nvim-tree/nvim-tree.lua</li>
-  <li>williamboman/mason.nvim</li>
-  <li>neovim/nvim-lspconfig</li>
-  <li>nvim-lualine/lualine.nvim</li>
-  <li>andweeb/presence.nvim</li>
-  <li>hrsh7th/nvim-cmp + LuaSnip + friendly-snippets</li>
-  <li>nvim-telescope/telescope.nvim</li>
-  <li>dccsillag/magma-nvim</li>
-</ul>
+---
 
-<h2 style="color:#bb9af7;">Tips & Configuration</h2>
-<ul>
-  <li><strong>Change Theme:</strong> Open <code>lua/core/settings.lua</code> and set your preferred theme:
-    <pre style="background-color:#16161e; color:#c0caf5; padding:5px;">vim.cmd("colorscheme tokyonight")</pre>
-  </li>
-  <li><strong>Keymaps:</strong> Add custom shortcuts in <code>lua/core/keymaps.lua</code>. Example:
-    <pre style="background-color:#16161e; color:#c0caf5; padding:5px;">vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })</pre>
-  </li>
-  <li><strong>Add Plugins:</strong> Edit <code>lua/core/plugin_config/init.lua</code> and run <code>:PackerSync</code>.</li>
-  <li><strong>LSP Servers:</strong> Install or configure servers via Mason:
-    <pre style="background-color:#16161e; color:#c0caf5; padding:5px;">:Mason</pre>
-  </li>
-  <li><strong>Update Plugins:</strong> Run:
-    <pre style="background-color:#16161e; color:#c0caf5; padding:5px;">:PackerSync</pre>
-  </li>
-  <li><strong>Notebook Cells:</strong> Use <code>magma-nvim</code> to execute code cells. Example:
-    <pre style="background-color:#16161e; color:#c0caf5; padding:5px;">:MagmaInit</pre>
-  </li>
-</ul>
+## Plugins Used (with descriptions)
 
-</div>
+| Plugin | Description |
+|--------|-------------|
+| `wbthomason/packer.nvim` | Plugin manager |
+| `folke/tokyonight.nvim` | Tokyo Night theme |
+| `ellisonleao/gruvbox.nvim` | Alternative color scheme |
+| `nvim-treesitter/nvim-treesitter` | Syntax highlighting & text objects |
+| `folke/which-key.nvim` | Displays available keybindings |
+| `nvim-tree/nvim-tree.lua` | File explorer |
+| `nvim-tree/nvim-web-devicons` | File icons support |
+| `williamboman/mason.nvim` | LSP/DAP/Linter installer |
+| `williamboman/mason-lspconfig.nvim` | Mason + LSP integration |
+| `neovim/nvim-lspconfig` | Language server configuration |
+| `nvim-lualine/lualine.nvim` | Statusline |
+| `andweeb/presence.nvim` | Discord Rich Presence |
+| `hrsh7th/nvim-cmp` | Autocompletion engine |
+| `hrsh7th/cmp-nvim-lsp` | LSP completion source |
+| `hrsh7th/cmp-buffer` | Buffer completion source |
+| `hrsh7th/cmp-path` | Path completion source |
+| `L3MON4D3/LuaSnip` | Snippet engine |
+| `saadparwaiz1/cmp_luasnip` | LuaSnip source for cmp |
+| `rafamadriz/friendly-snippets` | Predefined snippets |
+| `nvim-telescope/telescope.nvim` | Fuzzy finder |
+| `dccsillag/magma-nvim` | Jupyter notebook support |
 
+---
+
+## Installation (Windows)
+
+1. **Clone Repository**
+
+```powershell
+git clone https://github.com/Obiwankenobi699/nvim_Config_4Everyone.git $Env:USERPROFILE\.config\nvim
