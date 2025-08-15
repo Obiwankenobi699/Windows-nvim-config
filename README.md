@@ -33,13 +33,6 @@ A **full-featured Neovim configuration** featuring the **Tokyo Night theme**, op
 ### Other Utilities
 - **Plenary.nvim** and **Popup.nvim** for Lua helper functions.
 - Automatically installs **Packer.nvim** if not present.
-
----
-
-## Screenshots
-
-![Neovim Tokyo Night](image.png)
-
 ---
 
 ## Folder Structure
