@@ -1,4 +1,4 @@
-# Neovim Configuration - Tokyo Night Setup
+# Neovim Configuration for windows - Tokyo Night Setup
 
 ![Neovim Tokyo Night](image.png)
 
@@ -90,3 +90,146 @@ A **full-featured Neovim configuration** featuring the **Tokyo Night theme**, op
 
 ```powershell
 git clone https://github.com/Obiwankenobi699/nvim_Config_4Everyone.git $Env:USERPROFILE\.config\nvim
+
+
+
+
+==============================
+NEOVIM TOKYO NIGHT SETUP GUIDE
+==============================
+
+This guide will help you quickly set up the Neovim configuration with the Tokyo Night theme on Windows.
+
+--------------------------------------------------
+1. PREREQUISITES
+--------------------------------------------------
+Make sure you have the following installed:
+
+1. Neovim (v0.8+ recommended) - https://neovim.io/
+2. Git - https://git-scm.com/
+3. PowerShell Core or Windows Terminal (optional, recommended)
+4. (Optional) WezTerm terminal for a better experience - https://wezfurlong.org/wezterm/
+
+--------------------------------------------------
+2. CLONE THE CONFIGURATION
+--------------------------------------------------
+Open PowerShell or your terminal and run:
+
+git clone https://github.com/Obiwankenobi699/nvim_Config_4Everyone.git $Env:USERPROFILE\.config\nvim
+
+This will copy the configuration to the default Neovim folder.
+
+--------------------------------------------------
+3. START NEOVIM
+--------------------------------------------------
+- Open Neovim by typing `nvim` in your terminal.
+- On first launch, Packer.nvim (plugin manager) will automatically install itself and the plugins.
+
+--------------------------------------------------
+4. INSTALL PLUGINS MANUALLY (IF NEEDED)
+--------------------------------------------------
+If plugins did not install automatically, run inside Neovim:
+
+:PackerSync
+
+--------------------------------------------------
+5. CHANGE THEME
+--------------------------------------------------
+- Open `lua/core/settings.lua`
+- Set your preferred theme:
+
+vim.cmd("colorscheme tokyonight")  -- Options: tokyonight, gruvbox
+
+--------------------------------------------------
+6. CUSTOM KEYBINDINGS
+--------------------------------------------------
+- Open `lua/core/keymaps.lua`
+- Add your custom keymaps. Example:
+
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
+
+--------------------------------------------------
+7. ADD OR REMOVE PLUGINS
+--------------------------------------------------
+- Open `lua/core/plugin_config/init.lua`
+- Add or remove plugins as needed.
+- Run `:PackerSync` inside Neovim to update plugins.
+
+--------------------------------------------------
+8. LSP AND AUTOCOMPLETION
+--------------------------------------------------
+- Install language servers using Mason:
+
+:Mason
+
+- Autocompletion is powered by nvim-cmp with LuaSnip support.
+- Snippets are preloaded from `rafamadriz/friendly-snippets`.
+
+--------------------------------------------------
+9. NOTEBOOK CELLS (JUPYTER LIKE)
+--------------------------------------------------
+- Magma.nvim allows execution of code cells directly in Neovim.
+- Initialize Magma:
+
+:MagmaInit
+
+- Select code and run `:MagmaEvaluate` to execute.
+
+--------------------------------------------------
+10. HELPFUL TIPS
+--------------------------------------------------
+- Show line numbers:
+
+vim.api.nvim_set_option('number', true)
+
+- Discover keybindings quickly:
+
+:WhichKey
+
+- Update all plugins:
+
+:PackerSync
+
+- Explore files quickly:
+
+<Telescope> (example keymap: <leader>ff)
+
+- Open file explorer:
+
+<NvimTreeToggle> (example keymap: <leader>fn)
+
+--------------------------------------------------
+11. FOLDER STRUCTURE
+--------------------------------------------------
+~/.config/nvim/
+├── init.lua               # Main entry point
+├── image.png              # Screenshot for README
+└── lua/
+    └── core/
+        ├── keymaps.lua           # Custom keybindings
+        ├── settings.lua          # Theme & options
+        └── plugin_config/
+            └── init.lua          # Plugin definitions
+
+--------------------------------------------------
+12. TROUBLESHOOTING
+--------------------------------------------------
+- Plugins not loading? Run `:PackerSync`.
+- LSP not working? Make sure servers are installed via Mason.
+- Keybindings not working? Check `keymaps.lua` syntax.
+- Theme not applied? Check `settings.lua` for colorscheme.
+
+--------------------------------------------------
+13. RESOURCES
+--------------------------------------------------
+- Neovim: https://neovim.io/
+- Packer.nvim: https://github.com/wbthomason/packer.nvim
+- Tokyo Night Theme: https://github.com/folke/tokyonight.nvim
+- Mason.nvim (LSP installer): https://github.com/williamboman/mason.nvim
+- Magma.nvim (Jupyter support): https://github.com/dccsillag/magma-nvim
+- Telescope.nvim (Fuzzy finder): https://github.com/nvim-telescope/telescope.nvim
+
+==============================
+ENJOY YOUR NEOVIM SETUP!
+==============================
+
